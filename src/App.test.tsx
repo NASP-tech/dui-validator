@@ -20,7 +20,7 @@ describe('App', () => {
 
     it('should render', () => {
         const render = document.createElement('div');
-        ReactDOM.render(<App/>, render);
+        ReactDOM.render(<App />, render);
         ReactDOM.unmountComponentAtNode(render);
     });
 
@@ -40,4 +40,9 @@ describe('App', () => {
         const button = container.querySelector('button');
         expect(button?.textContent).toBe('Validar');
     })
+
+    it('should have a form submission', () => {
+        const form = container.querySelector('form');
+        expect(form);
+    });
 })
