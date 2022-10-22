@@ -18,7 +18,11 @@ describe('App', () => {
         container.remove();
     })
 
-    it.todo('should render');
+    it('should render', () => {
+        const render = document.createElement('div');
+        ReactDOM.render(<App/>, render);
+        ReactDOM.unmountComponentAtNode(render);
+    });
 
     it('should have title "Mi DUI es valido?"', () => {
         const title = container.querySelectorAll('h1');
@@ -32,6 +36,8 @@ describe('App', () => {
     });
 
 
-    it('should have a button with text "Validar"');
-    /* Lo que demas que se les ocurra que puedan probar */
+    it('should have a button with text "Validar"', () => {
+        const button = container.querySelector('button');
+        expect(button?.textContent).toBe('Validar');
+    })
 })
